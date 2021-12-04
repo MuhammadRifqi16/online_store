@@ -36,6 +36,7 @@ $routes->get('/auth/login', 'Auth::login');
 $routes->get('/admin/dashboardadmin', 'admin/DashboardAdmin::index');
 $routes->get('/admin/databarang', 'admin/DataBarang::index');
 $routes->get('/admin/invoice', 'admin/Invoice::index');
+$routes->get('/admin/databarang/edit/(:num)', 'admin/DataBarang::edit');
 
 /*
  * --------------------------------------------------------------------
