@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <h3><i class="fas fa-edit"></i>EDIT DATA BARANG</h3>
 
-        <form method="post" action="<?php echo base_url().'/admin/databarang/update' ?>">
+        <form method="post" action="<?php echo base_url('admin/databarang/update') ?>">
 
         <div class="for-group">
             <label>Nama Barang</label>
