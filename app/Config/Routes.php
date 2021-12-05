@@ -34,12 +34,12 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Dashboard::index');
 $routes->get('/auth/login', 'Auth::login');
 
-$routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($routes) {
+$routes->group('admin', function ($routes) {
     $routes->get('', 'DashboardAdmin::index');
     $routes->get('dashboardadmin', 'DashboardAdmin::index');
     $routes->get('invoice', 'Invoice::index');
     $routes->group('databarang', function ($routes) {
-        $routes->get('/', 'DataBarang::index');
+        $routes->get('', 'DataBarang::index');
         $routes->get('edit/(:num)', 'DataBarang::edit/$1');
         $routes->get('hapus/(:num)', 'DataBarang::hapus/$1');
         $routes->post('update', 'DataBarang::update');

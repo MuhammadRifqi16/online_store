@@ -1,11 +1,11 @@
-<?php 
+<?php
 
-namespace App\Controllers\Admin;
-use App\Controllers\BaseController;
+namespace App\Controllers;
 
 use App\Models\ModelBarang;
 
-class DataBarang extends BaseController{
+class DataBarang extends BaseController
+{
     public function __construct()
     {
         $this->model_barang = new ModelBarang();
@@ -28,9 +28,9 @@ class DataBarang extends BaseController{
         $stok               = $this->request->getVar('stok');
         $gambar     = $this->request->getFile('image');
         $name = $gambar->getRandomName();
-        $gambar->move('uploads',$name);
+        $gambar->move('uploads', $name);
 
-        $data = array (
+        $data = array(
             'nama_brg'      => $nama_brg,
             'keterangan'    => $keterangan,
             'kategori'      => $kategori,
@@ -41,8 +41,6 @@ class DataBarang extends BaseController{
 
         $this->model_barang->tambah_barang($data);
         return redirect()->to('/admin/databarang');
-
-
     }
 
     public function edit($id)
@@ -54,7 +52,8 @@ class DataBarang extends BaseController{
         echo view('templates_admin/footer');
     }
 
-    public function update(){
+    public function update()
+    {
         $id_brg          = $this->request->getVar('id_brg');
         $nama_brg        = $this->request->getVar('nama_brg');
         $keterangan      = $this->request->getVar('keterangan');
@@ -75,13 +74,11 @@ class DataBarang extends BaseController{
 
         $this->model_barang->update_data($data);
         return redirect()->to('/admin/databarang');
-
     }
 
-    public function hapus ($id)
+    public function hapus($id)
     {
         $this->model_barang->hapus_data($id);
         return redirect()->to('/admin/databarang');
-
     }
 }
