@@ -35,9 +35,9 @@ $routes->get('/', 'Dashboard::index');
 $routes->get('/auth/login', 'Auth::login');
 
 $routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($routes) {
-    $routes->get('/', 'DashboardAdmin::index');
-    $routes->get('/dashboardadmin', 'DashboardAdmin::index');
-    $routes->get('/invoice', 'Invoice::index');
+    $routes->get('', 'DashboardAdmin::index');
+    $routes->get('dashboardadmin', 'DashboardAdmin::index');
+    $routes->get('invoice', 'Invoice::index');
     $routes->group('databarang', function ($routes) {
         $routes->get('/', 'DataBarang::index');
         $routes->get('edit/(:num)', 'DataBarang::edit/$1');
