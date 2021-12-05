@@ -33,11 +33,20 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Dashboard::index');
 $routes->get('/auth/login', 'Auth::login');
-$routes->get('/admin/dashboardadmin', 'admin/DashboardAdmin::index');
-$routes->get('/admin/databarang', 'admin/DataBarang::index');
-$routes->get('/admin/invoice', 'admin/Invoice::index');
-$routes->get('/admin/databarang/edit/(:num)', 'admin/DataBarang::edit/$1');
-$routes->get('/admin/databarang/update', 'admin/DataBarang::update');
+
+$routes->group('admin', ['namespace' => 'App\Controllers\admin'], function ($routes) {
+    $routes->get('/', 'DashboardAdmin::index');
+    $routes->get('/dashboardadmin', 'DashboardAdmin::index');
+    $routes->get('/invoice', 'Invoice::index');
+    $routes->group('databarang', function ($routes) {
+        $routes->get('/', 'DataBarang::index');
+        $routes->get('edit/(:num)', 'DataBarang::edit/$1');
+        $routes->get('hapus/(:num)', 'DataBarang::hapus/$1');
+        $routes->post('update', 'DataBarang::update');
+        $routes->post('tambah_aksi', 'DataBarang::tambah_aksi');
+    });
+});
+
 
 /*
  * --------------------------------------------------------------------

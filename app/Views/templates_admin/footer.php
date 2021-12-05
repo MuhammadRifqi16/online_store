@@ -1,5 +1,5 @@
-<!-- Bootstrap core JavaScript-->
-<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js') ?>"></script>
 
     <!-- Core plugin JavaScript-->
@@ -9,6 +9,6 @@
     <script src="<?php echo base_url('assets/js/sb-admin-2.min.js') ?>"></script>
 
 
-</body>
+    </body>
 
-</html>
+    </html>
