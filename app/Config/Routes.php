@@ -34,7 +34,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Dashboard::index');
 $routes->get('/auth/login', 'Auth::login');
 
-$routes->group('admin', ['namespace' => 'App\Controllers\admin'], function ($routes) {
+$routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function ($routes) {
     $routes->get('/', 'DashboardAdmin::index');
     $routes->get('/dashboardadmin', 'DashboardAdmin::index');
     $routes->get('/invoice', 'Invoice::index');
