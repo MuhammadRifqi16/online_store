@@ -11,7 +11,7 @@
                 <div class="sidebar-brand-icon ">
                     <i class="fas fa-store"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Online Store</div>
+                <div class="sidebar-brand-text mx-3">Rifqi Store</div>
             </a>
 
             <!-- Divider -->
